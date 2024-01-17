@@ -5,9 +5,9 @@ CREATE TABLE earthquakes (
   longitude real,
   quakedepth real,
   mag real,
-  magType text(255),
-  id text(255),
-  updated text(255),
+  magType text,
+  id text,
+  updated text,
   place text,
   status text,
   locationSource text
