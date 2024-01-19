@@ -6,3 +6,8 @@ SELECT * FROM earthquakes WHERE longitude BETWEEN -180 AND -130 AND latitude BET
 
 -- fetch the place and magnitude of the earthquake where the magnitude is larger than 6 and between latitudes 50 and 70 ordered from lowest magnitude to highest.
 SELECT place, mag WHERE mag > 6 AND latitude BETWEEN 50 AND 70 ORDER BY mag ASC;
+
+-- fetch all the data from records where the earthquake magnitude is larger than 6 or less than 2.
+SELECT * FROM earthquakes WHERE mag>6 
+UNION
+SELECT * FROM earthquakes WHERE mag<2;
