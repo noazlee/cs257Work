@@ -6,16 +6,16 @@ import psycopg2
 def create_tables():
     """ create tables in the PostgreSQL database"""
     command1 = """CREATE TABLE states ( 
-            state_name VARCHAR(255) NOT NULL,
-            state_id SERIAL PRIMARY KEY 
+            state_name text NOT NULL,
+            state_id text
             ) """
         
     command2 = """CREATE TABLE cities (
-                city_name VARCHAR(255) NOT NULL,
-                state_name VARCHAR(255) NOT NULL,
-                city_pop NUMERIC NOT NULL,
-                city_lat float(255) NOT NULL,
-                city_lon float(255) NOT NULL
+                city_name text NOT NULL,
+                state_name text NOT NULL,
+                city_pop int NOT NULL,
+                city_lat real NOT NULL,
+                city_lon real NOT NULL
                 )"""
 
     conn = None
