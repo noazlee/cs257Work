@@ -27,6 +27,8 @@ def create_tables():
         user="leen2",
         password="chip574pencil")
 
+        cur = conn.cursor()
+        
         # create table one by one
         cur.execute(command1)
         cur.execute(command2)
