@@ -73,7 +73,10 @@ def get_city_in_MN():
         password="chip574pencil")
         
         cur = conn.cursor()
-        cur.execute("SELECT city_name FROM cities WHERE state_name==Minnesota ORDER BY city_pop LIMIT 1")
+        cur.execute("""SELECT city_name
+        FROM cities
+        WHERE state_name=='Minnesota'
+        ORDER BY city_pop LIMIT 1""")
         print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
 
