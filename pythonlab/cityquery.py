@@ -239,7 +239,7 @@ def get_city_in_USER(state):
 
         if(len(state)!=2):
             cur.execute("SELECT city_pop FROM cities WHERE state_name LIKE %s", (state,))
-            row = cur.fetchone()
+            row = int(cur.fetchone())
         else:
             cur.execute("SELECT state_name FROM states WHERE state_id LIKE %s", (state,))
             print("The number of parts: ", cur.rowcount)
