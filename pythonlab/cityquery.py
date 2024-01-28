@@ -91,7 +91,7 @@ def get_city_in_MN():
         if conn is not None:
             conn.close()
 
-get_city_in_MN()
+get_city_in_MN() #shakopee
 
 def get_city_in_N():
     """ query data from the vendors table """
@@ -213,8 +213,8 @@ def get_city_in_W():
         if conn is not None:
             conn.close()
 
-get_city_in_N()
-get_city_in_S()
-get_city_in_E()
-get_city_in_W()
+get_city_in_N() #anchorage
+get_city_in_S() #honolulu
+get_city_in_E() #honolulu
+get_city_in_W() #portland, maine
 
