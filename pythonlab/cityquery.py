@@ -223,7 +223,7 @@ get_city_in_W() #portland, maine
 state = input("Enter a US state ")
 
 def get_city_in_USER(state):
-
+    totalpop=0
     """ query data from the vendors table """
     conn = None
     try:
@@ -238,16 +238,22 @@ def get_city_in_USER(state):
         cur = conn.cursor()
 
         if(len(state)!=2):
-            cur.execute("SELECT city_name, state_name FROM cities WHERE state_name LIKE %s", (state,))
+            cur.execute("SELECT city_pop FROM cities WHERE state_name LIKE %s", (state,))
             row = cur.fetchone()
         else:
             cur.execute("SELECT state_name FROM states WHERE state_id LIKE %s", (state,))
             print("The number of parts: ", cur.rowcount)
-            row = cur.fetchone()
+            row2 = cur.fetchone()
+            state = row2
+            
+            get_city_in_USER(state)
+            
 
         while row is not None:
-            print(row)
+            totalpop+=row
             row = cur.fetchone()
+
+        print(row)
 
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
