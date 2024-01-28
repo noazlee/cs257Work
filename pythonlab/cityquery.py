@@ -13,7 +13,7 @@ def get_city():
         password="chip574pencil")
         
         cur = conn.cursor()
-        cur.execute("SELECT city_name FROM cities WHERE city_name==Northfield")
+        cur.execute("SELECT city_name FROM cities WHERE city_name LIKE Northfield")
         print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
 
