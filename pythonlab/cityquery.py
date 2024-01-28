@@ -43,7 +43,7 @@ def get_city_with_highest_pop():
         password="chip574pencil")
         
         cur = conn.cursor()
-        cur.execute("SELECT city_name FROM cities")
+        cur.execute("SELECT * FROM cities")
         print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
 
