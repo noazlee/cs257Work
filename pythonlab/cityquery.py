@@ -28,7 +28,7 @@ def get_city():
         if conn is not None:
             conn.close()
 
-get_city() #northfield is not in the database
+#get_city() #northfield is not in the database
 
 def get_city_with_highest_pop():
     """ query data from the vendors table """
