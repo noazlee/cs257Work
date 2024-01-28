@@ -242,17 +242,21 @@ def get_city_in_USER(state):
             rows = cur.fetchall()
         else:
             cur.execute("SELECT state_name FROM states WHERE state_id LIKE %s", (state,))
-            print("The number of parts: ", cur.rowcount)
+            
             row2 = cur.fetchone()
             state = row2
             
             cur.execute("SELECT city_pop FROM cities WHERE state_name LIKE %s", (state,))
+            rows = cur.fetchall()
+
+            cur.execute("SELECT city_name, city_pop FROM cities WHERE state_name LIKE %s", (state,))
             rows = cur.fetchall()
             
 
         for row in rows:
                 totalpop += row[0]
 
+        print("The number of parts: ", cur.rowcount)
         print(totalpop)
 
         cur.close()
