@@ -251,9 +251,9 @@ def get_city_in_USER(state):
             
 
         for row in rows:
-                totalpop += rows[row]
+                totalpop += rows[0]
 
-        print(row)
+        print(totalpop)
 
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
