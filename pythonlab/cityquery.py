@@ -246,7 +246,7 @@ def get_city_in_USER(state):
         else:
             cur.execute("""SELECT state_name
             FROM states
-            WHERE state_id LIKE """+state)
+            WHERE state_id LIKE """+state+"""""")
             print("The number of parts: ", cur.rowcount)
             row = cur.fetchone()
 
