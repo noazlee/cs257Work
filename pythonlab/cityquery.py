@@ -237,7 +237,7 @@ def get_city_in_USER(state):
         
         cur = conn.cursor()
 
-        if(len(state)!=2)
+        if(len(state)!=2):
             cur.execute("""SELECT city_name, state_name
             FROM cities
             WHERE state_name LIKE """,state)
