@@ -251,7 +251,7 @@ def get_city_in_USER(state):
             
 
         for row in rows:
-                totalpop += rows[0]
+                totalpop += row[0]
 
         print(totalpop)
 
