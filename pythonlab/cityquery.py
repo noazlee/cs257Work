@@ -75,7 +75,7 @@ def get_city_in_MN():
         cur = conn.cursor()
         cur.execute("""SELECT city_name
         FROM cities
-        WHERE state_name=='Minnesota'
+        WHERE state_name LIKE 'Minnesota'
         ORDER BY city_pop LIMIT 1""")
         print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
