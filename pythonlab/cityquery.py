@@ -92,3 +92,129 @@ def get_city_in_MN():
             conn.close()
 
 get_city_in_MN()
+
+def get_city_in_N():
+    """ query data from the vendors table """
+    conn = None
+    try:
+        
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
+        cur = conn.cursor()
+        cur.execute("""SELECT city_name, state_name
+        FROM cities
+        ORDER BY city_lat DESC LIMIT 1""")
+        print("The number of parts: ", cur.rowcount)
+        row = cur.fetchone()
+
+        while row is not None:
+            print(row)
+            row = cur.fetchone()
+
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+def get_city_in_S():
+    """ query data from the vendors table """
+    conn = None
+    try:
+        
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
+        cur = conn.cursor()
+        cur.execute("""SELECT city_name, state_name
+        FROM cities
+        ORDER BY city_lat LIMIT 1""")
+        print("The number of parts: ", cur.rowcount)
+        row = cur.fetchone()
+
+        while row is not None:
+            print(row)
+            row = cur.fetchone()
+
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+def get_city_in_E():
+    """ query data from the vendors table """
+    conn = None
+    try:
+        
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
+        cur = conn.cursor()
+        cur.execute("""SELECT city_name, state_name
+        FROM cities
+        ORDER BY city_lon LIMIT 1""")
+        print("The number of parts: ", cur.rowcount)
+        row = cur.fetchone()
+
+        while row is not None:
+            print(row)
+            row = cur.fetchone()
+
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+def get_city_in_W():
+    """ query data from the vendors table """
+    conn = None
+    try:
+        
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
+        cur = conn.cursor()
+        cur.execute("""SELECT city_name, state_name
+        FROM cities
+        ORDER BY city_lon DESC LIMIT 1""")
+        print("The number of parts: ", cur.rowcount)
+        row = cur.fetchone()
+
+        while row is not None:
+            print(row)
+            row = cur.fetchone()
+
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+get_city_in_N()
+get_city_in_S()
+get_city_in_E()
+get_city_in_W()
+
