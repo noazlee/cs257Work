@@ -4,8 +4,14 @@ def get_city():
     """ query data from the vendors table """
     conn = None
     try:
-        params = config()
-        conn = psycopg2.connect(**params)
+        
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
         cur = conn.cursor()
         cur.execute("SELECT city_name FROM cities WHERE city_name==Northfield")
         print("The number of parts: ", cur.rowcount)
