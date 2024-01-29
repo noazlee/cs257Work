@@ -17,9 +17,12 @@ def get_city():
         print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
 
-        while row is not None:
-            print(row)
-            row = cur.fetchone()
+        if(row is not None):
+            while row is not None:
+                print(row)
+                row = cur.fetchone()
+        else:
+            print("No instance found")
 
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
