@@ -1,6 +1,5 @@
 import psycopg2
 
-
 def percPop(cityName, stateName):
     """"GET THE POPULATION OF THE POP WHO LIVES IN THE CITY FROM THE STATE"""
     
@@ -36,5 +35,5 @@ def percPop(cityName, stateName):
         if conn is not None:
             conn.close()
 
-percPop("Minneapolis", "Minnesota")
+percPop("Cleveland", "Ohio")
 
