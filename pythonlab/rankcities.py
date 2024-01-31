@@ -36,4 +36,4 @@ def percPop(cityName, stateName):
     finally:
         if conn is not None:
             conn.close()
-percPop()
+
