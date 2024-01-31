@@ -1,3 +1,6 @@
+#!/usr/bin/python
+
+
 import psycopg2
 #from config import config
 
@@ -22,7 +25,6 @@ def create_tables():
         
         # create table one by one
         cur.execute(command1)
-        cur.execute(command2)
         # close communication with the PostgreSQL database server
         cur.close()
         # commit the changes
