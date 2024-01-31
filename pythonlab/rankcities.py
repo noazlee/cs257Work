@@ -16,7 +16,7 @@ def percPop(cityName, stateName):
         cur = conn.cursor()
         cur.execute("""
         SELECT (city_pop/pop) AS total FROM cities JOIN statePOP on cities.state_name = statePOP.state_name
-        WHERE city_name LIKE """+ cityName+ """ AND state_name LIKE """+ stateName
+        WHERE city_name = """+ cityName+ """ AND state_name = """+ stateName
         )
         #print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
