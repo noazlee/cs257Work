@@ -16,9 +16,8 @@ def percPop(cityName, stateName):
         
         cur = conn.cursor()
         cur.execute("""
-        CREATE VIEW proportionPop AS
         SELECT (city_pop/pop) AS total FROM cities JOIN statePOP on state_id
-        WHERE city_name LIKE""", cityName, """ AND state_name LIKE""", stateName
+        WHERE city_name LIKE """+ cityName+ """ AND state_name LIKE """+ stateName
         )
         #print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
@@ -28,7 +27,7 @@ def percPop(cityName, stateName):
                 print(row)
                 row = cur.fetchone()
         else:
-            print("No instance found")
+            print("No ipernstance found")
 
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
