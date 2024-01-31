@@ -1,7 +1,8 @@
 import psycopg2
 
 def percPop(cityName, stateName):
-    """"GET THE POPULATION OF THE POP WHO LIVES IN THE CITY FROM THE STATE"""
+
+    #GET THE POPULATION OF THE POP WHO LIVES IN THE CITY FROM THE STATE
     
     conn = None
     try:
@@ -14,9 +15,12 @@ def percPop(cityName, stateName):
         password="chip574pencil")
         
         cur = conn.cursor()
-        cur.execute("""
+
+        sql="""
         SELECT (city_pop/pop) AS total FROM cities JOIN statePOP on cities.state_name = statePOP.state_name
-        WHERE city_name = """+ cityName+ """ AND state_name = """+ stateName
+        WHERE city_name = %s  AND state_name = %s"""
+        
+        cur.execute(sql,[city_name, state_name]
         )
         #print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
