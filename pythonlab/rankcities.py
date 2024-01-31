@@ -36,3 +36,5 @@ def percPop(cityName, stateName):
         if conn is not None:
             conn.close()
 
+percPop("Minneapolis", "Minnesota")
+
