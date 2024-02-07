@@ -40,12 +40,12 @@ def getArea(abbrev):
         SELECT city_pop FROM cities WHERE state_id = %s
         '''
         cur.execute(sql, (abbrev, ) )
-        row = cur.fetchall()
+        rows = cur.fetchall()
         sum = 0
         for row in rows:
             sum+=row[0]
 
-        if(row):
+        if(rows):
             ans = '<h1 style="font:sans-serif"> The state area is: ' + str(sum) +'</h1>'
         else:
             ans = '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
