@@ -24,7 +24,7 @@ def addition(num1,num2):
     return '<h1 style="font:sans-serif"> The sum is: ' + str(sum) +'</h1>'
 
 @app.route('/area/<abbrev>')
-def getArea(abbrev) -> area:
+def getArea(abbrev):
     conn = None
     try:
         
