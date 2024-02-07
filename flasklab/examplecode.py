@@ -37,7 +37,7 @@ def getArea(abbrev):
         
         cur = conn.cursor()
         sql = '''
-        SELECT city_pop FROM cities WHERE state_id = %s
+        SELECT city_pop FROM cities JOIN states on cities.state_name = states.state_name WHERE state_id = %s
         '''
         cur.execute(sql, (abbrev, ) )
         rows = cur.fetchall()
@@ -46,7 +46,7 @@ def getArea(abbrev):
             sum+=row[0]
 
         if(rows):
-            ans = '<h1 style="font:sans-serif"> The state area is: ' + str(sum) +'</h1>'
+            ans = '<h1 style="font:sans-serif"> The state population is: ' + str(sum) +'</h1>'
         else:
             ans = '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
 
