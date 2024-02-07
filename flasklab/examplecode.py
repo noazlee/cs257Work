@@ -1,3 +1,4 @@
+from re import S
 import flask,psycopg2
 
 app = flask.Flask(__name__)
@@ -36,13 +37,16 @@ def getArea(abbrev):
         
         cur = conn.cursor()
         sql = '''
-        SELECT state_name FROM states WHERE state_id = %s
+        SELECT city_pop FROM cities WHERE state_id = %s
         '''
         cur.execute(sql, (abbrev, ) )
-        row = cur.fetchone()
+        row = cur.fetchall()
+        sum = 0
+        for row in rows:
+            sum+=row[0]
 
         if(row):
-            ans = '<h1 style="font:sans-serif"> The state area is: ' + row[0] +'</h1>'
+            ans = '<h1 style="font:sans-serif"> The state area is: ' + str(sum) +'</h1>'
         else:
             ans = '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
 
