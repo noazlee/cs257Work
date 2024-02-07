@@ -257,7 +257,7 @@ def get_city_in_USER(state):
             
 
         for row in rows:
-                totalpop += row[0]
+            totalpop += row[0]
 
         print("The number of parts: ", cur.rowcount)
         print(totalpop)
