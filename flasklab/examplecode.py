@@ -53,7 +53,7 @@ def getArea(abbrev):
         if conn is not None:
             conn.close()
 
-    return ans
+    print(ans)
 
     
 
