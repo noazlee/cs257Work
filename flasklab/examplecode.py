@@ -38,7 +38,7 @@ def getArea(abbrev):
         sql = '''
         SELECT state_name FROM states WHERE state_id = %s
         '''
-        cur.execute(sql, (abbrev,))
+        cur.execute(sql, (abbrev, ) )
         row = cur.fetchone()
 
         if(row):
@@ -59,5 +59,5 @@ def getArea(abbrev):
 
 if __name__ == '__main__':
     my_port = 5128
-    #app.run(host='0.0.0.0', port = my_port)
-    print(getArea('MN'))
+    app.run(host='0.0.0.0', port = my_port)
+
