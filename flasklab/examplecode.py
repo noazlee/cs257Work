@@ -23,7 +23,7 @@ def addition(num1,num2):
     sum = num1 + num2
     return '<h1 style="font:sans-serif"> The sum is: ' + str(sum) +'</h1>'
 
-@app.route('/area/<abbrev>')
+#@app.route('/area/<abbrev>')
 def getArea(abbrev):
     conn = None
     try:
@@ -59,4 +59,5 @@ def getArea(abbrev):
 
 if __name__ == '__main__':
     my_port = 5128
-    app.run(host='0.0.0.0', port = my_port)
+    #app.run(host='0.0.0.0', port = my_port)
+    getArea('MN')
