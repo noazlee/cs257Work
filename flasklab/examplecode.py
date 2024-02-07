@@ -1,4 +1,4 @@
-import flask
+import flask,psycopg2
 
 app = flask.Flask(__name__)
 
@@ -22,6 +22,40 @@ def addition(num1,num2):
     num2 = float(num2)
     sum = num1 + num2
     return '<h1 style="font:sans-serif"> The sum is: ' + str(sum) +'</h1>'
+
+@app.route('/area/<abbrev>')
+def getArea(abbrev) -> area:
+    conn = None
+    try:
+        
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
+        cur = conn.cursor()
+        sql = '''
+        SELECT state_name FROM states WHERE state_id = %s
+        '''
+        cur.execute(sql, abbrev)
+        print("The number of parts: ", cur.rowcount)
+        row = cur.fetchone()
+
+        if(row is not None):
+            return '<h1 style="font:sans-serif"> The state area is: ' + row +'</h1>'
+        else:
+            return '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
+
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+    
 
 if __name__ == '__main__':
     my_port = 5128
