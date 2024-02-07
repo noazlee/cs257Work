@@ -5,7 +5,7 @@ app = flask.Flask(__name__)
 #
 @app.route('/hello')
 def my_function():
-    return "Hello World!"
+    return "Fuck you Jeremiah!"
 
 @app.route('/display/<word1>/<word2>')
 def my_display(word1, word2):
