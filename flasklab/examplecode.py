@@ -18,8 +18,8 @@ def my_color(word1):
 
 @app.route('/add/<num1>/<num2>')
 def addition(num1,num2):
-    num1 = float(num1)
-    num2 = float(num2)
+    num1 = int(num1, 0)
+    num2 = int(num2, 0)
     sum = num1 + num2
     return '<h1 style="font:sans-serif"> The sum is: '+sum+'</h1>'
 
