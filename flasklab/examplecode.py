@@ -38,11 +38,11 @@ def getArea(abbrev):
         sql = '''
         SELECT state_name FROM states WHERE state_id = %s
         '''
-        cur.execute(sql, abbrev)
+        cur.execute(sql, (abbrev,))
         row = cur.fetchone()
 
-        if(row is not None):
-            ans = '<h1 style="font:sans-serif"> The state area is: ' + row +'</h1>'
+        if(row):
+            ans = '<h1 style="font:sans-serif"> The state area is: ' + row[0] +'</h1>'
         else:
             ans = '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
 
@@ -53,7 +53,7 @@ def getArea(abbrev):
         if conn is not None:
             conn.close()
 
-    print(ans)
+    return ans
 
     
 
