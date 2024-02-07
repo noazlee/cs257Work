@@ -5,7 +5,7 @@ app = flask.Flask(__name__)
 #
 @app.route('/hello')
 def my_function():
-    return "Fuck you Jeremiah!"
+    return "Hello world!"
 
 @app.route('/display/<word1>/<word2>')
 def my_display(word1, word2):
@@ -15,6 +15,11 @@ def my_display(word1, word2):
 @app.route('/color/<word1>')
 def my_color(word1):
     return '<h1 style="color:Red">' + word1 + '</h1>'
+
+@app.route('/add/<num1>/<num2>')
+def addition(num1,num2):
+    sum = num1+num2
+    return '<h1 style="font:sans-serif"> The sum is: '+sum+'</h1>'
 
 if __name__ == '__main__':
     my_port = 5128
