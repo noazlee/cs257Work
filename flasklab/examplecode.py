@@ -27,7 +27,6 @@ def addition(num1,num2):
 def getArea(abbrev):
     conn = None
     try:
-        
         conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -40,13 +39,12 @@ def getArea(abbrev):
         SELECT state_name FROM states WHERE state_id = %s
         '''
         cur.execute(sql, abbrev)
-        print("The number of parts: ", cur.rowcount)
         row = cur.fetchone()
 
         if(row is not None):
-            return '<h1 style="font:sans-serif"> The state area is: ' + row +'</h1>'
+            ans = '<h1 style="font:sans-serif"> The state area is: ' + row +'</h1>'
         else:
-            return '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
+            ans = '<h1 style="font:sans-serif"> Invalid state abbreviation</h1>'
 
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
@@ -54,6 +52,8 @@ def getArea(abbrev):
     finally:
         if conn is not None:
             conn.close()
+
+    return ans
 
     
 
