@@ -16,6 +16,11 @@ button{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    
+}
+
+button:hover{
+    background-color: #026541; /* Green */
 }
 
 a{
