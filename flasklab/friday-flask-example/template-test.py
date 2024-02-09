@@ -18,6 +18,10 @@ def rand(low, high):
     num = random.randint(low_int, high_int)
     return render_template("random.html", randNum = num)
 
+@app.route('/pookie')
+def pookie():
+    return render_template("pookie.html")
+
 if __name__ == '__main__':
     my_port = 5128
     app.run(host='0.0.0.0', port = my_port) 
