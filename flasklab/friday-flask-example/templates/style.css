@@ -7,9 +7,15 @@ body{
     background-color: blanchedalmond;
 }
 
-button{
-    color:rgb(3, 87, 59);
-    background-color: rgb(246, 144, 144);
+.button{
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 80% 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 a{
