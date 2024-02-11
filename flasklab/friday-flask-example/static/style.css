@@ -9,7 +9,7 @@ body{
 
 button{
     background-color: #04AA6D; /* Green */
-    border: none;
+    border: 10px;
     color: white;
     padding: 32px 45%;
     text-align: center;
