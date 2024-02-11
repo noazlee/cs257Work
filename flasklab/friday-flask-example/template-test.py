@@ -27,16 +27,16 @@ def pookie():
 @app.route('/randS')
 def randSentence():
     listNames = ["Jeremiah", "Noah", "Warren", "Daya"]
-    listAdj = ["Coward", "Loser", "AssFart", "Ugly", "Musty", "Crusty"]
+    listAdj = ["Coward", "Loser", "Poopy", "Ugly", "Musty", "Crusty"]
     listPlace = ["O-Block", "Italy", "Chicago", "Ugly-stan"]
     listYear = ["5 BC", "2005", "2004", "2000", "1945", "1998"]
-    num1 = random.randint(0,len(listNames))
+    num1 = random.randint(0,len(listNames)-1)
     name = listNames[num1]
-    num2 = random.randint(0,len(listAdj))
+    num2 = random.randint(0,len(listAdj)-1)
     adj = listNames[num2]
-    num3 = random.randint(0,len(listPlace))
+    num3 = random.randint(0,len(listPlace)-1)
     place = listNames[num3]
-    num4 = random.randint(0,len(listYear))
+    num4 = random.randint(0,len(listYear)-1)
     year = listNames[num4]
 
     return render_template("randStory.html", randName=name, randAdjective=adj,randPlace=place,randYear=year)
