@@ -27,8 +27,7 @@
 
 h1,h2{
     text-align: center;
-    animation: fadeIn 1s ease-in-out forwards;
-    animation: slideDown 1s ease-out forwards;
+    animation: fadeIn 1s ease-in-out forwards, slideDown 1s ease-out forwards;
 }
 
 body{
@@ -36,10 +35,7 @@ body{
     background-color: blanchedalmond;
 }
 
-button{
-    transition: background-color 0.5s ease-in-out;
-    opacity:1;
-    transition: opacity 0.5s ease-in-out;
+button {
     background-color: #04AA6D; /* Green */
     margin: 10px;
     color: white;
@@ -48,13 +44,14 @@ button{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    
+    transition: background-color 0.2s ease-in-out; /* Add transition for all state changes */
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
-button:hover{
-    background-color: #026541;
-    transition: background-color 0.2s ease-in-out;
+button:hover {
+    background-color: #026541; /* Darker green */
 }
+
 
 a{
     color:brown;
