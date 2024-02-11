@@ -8,14 +8,19 @@ h1,h2{
     animation: fadeIn 1s ease-in-out forwards;
 }
 
-body{
-    background-color: blanchedalmond;
-    animation: fadeIn 0.5s ease-in-out forwards;
-}
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes fadeInBG {
+    from { background-color: white;}
+    to {background-color: blanchedalmond;}
+}
+
+body{
+    animation: fadeInBG 0.5s ease-in-out forwards;
+    background-color: blanchedalmond;
 }
 
 button{
