@@ -5,13 +5,21 @@
 
 h1,h2{
     text-align: center;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 body{
     background-color: blanchedalmond;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 button{
+    animation: fadeIn 2s ease-in-out forwards;
     background-color: #04AA6D; /* Green */
     margin: 10px;
     color: white;
