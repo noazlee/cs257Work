@@ -24,14 +24,6 @@
     }
   }
 
-@keyframes buttonHover {
-    from {
-      background-color: #04AA6D;
-    }
-    to {
-      background-color: #026541;
-    }
-  }
 
 h1,h2{
     text-align: center;
@@ -58,7 +50,8 @@ button{
 }
 
 button:hover{
-    animation: buttonHover 0.5s ease-in-out forwards;
+    background-color: #026541;
+    transition: background-color 0.5s ease-in-out;
 }
 
 a{
