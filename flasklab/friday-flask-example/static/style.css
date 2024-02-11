@@ -24,6 +24,15 @@
     }
   }
 
+@keyframes buttonHover {
+    from {
+      background-color: #04AA6D;
+    }
+    to {
+      background-color: #026541;
+    }
+  }
+
 h1,h2{
     text-align: center;
     animation: fadeIn 1s ease-in-out forwards;
@@ -49,7 +58,7 @@ button{
 }
 
 button:hover{
-    background-color: #026541; /* Green */
+    animation: buttonHover 0.5s ease-in-out forwards;
 }
 
 a{
