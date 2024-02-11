@@ -38,6 +38,8 @@ body{
 
 button{
     transition: background-color 0.5s ease-in-out;
+    opacity:1;
+    transition: opacity 0.5s ease-in-out;
     background-color: #04AA6D; /* Green */
     margin: 10px;
     color: white;
