@@ -30,8 +30,11 @@ h1,h2{
     animation: fadeIn 1s ease-in-out forwards, slideDown 1s ease-out forwards;
 }
 
-body{
+.home{
     animation: fadeInBG 0.5s ease-in-out forwards;
+}
+
+body{
     background-color: blanchedalmond;
 }
 
