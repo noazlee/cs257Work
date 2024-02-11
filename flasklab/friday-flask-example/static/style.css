@@ -14,7 +14,7 @@ h1,h2{
 }
 
 @keyframes fadeInBG {
-    from { background-color: white;}
+    from { background-color: rgb(246, 239, 235);}
     to {background-color: blanchedalmond;}
 }
 
