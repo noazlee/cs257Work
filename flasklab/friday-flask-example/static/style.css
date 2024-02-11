@@ -37,7 +37,7 @@ body{
 }
 
 button{
-    animation: fadeIn 2s ease-in-out forwards;
+    transition: background-color 0.5s ease-in-out;
     background-color: #04AA6D; /* Green */
     margin: 10px;
     color: white;
