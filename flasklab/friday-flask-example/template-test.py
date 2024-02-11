@@ -6,9 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    return render_template("randStory.html")
-
-
+    return render_template("index.html")
 
 @app.route('/rand/<low>/<high>')
 def rand(low, high):
@@ -33,7 +31,7 @@ def randSentence():
     num1 = random.randint(0,len(listNames)-1)
     name = listNames[num1]
     num2 = random.randint(0,len(listAdj)-1)
-    adj = listAdj[num2]
+    adj = listAdj[num2] 
     num3 = random.randint(0,len(listPlace)-1)
     place = listPlace[num3]
     num4 = random.randint(0,len(listYear)-1)
