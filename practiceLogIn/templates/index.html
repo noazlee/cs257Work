@@ -2,31 +2,21 @@
 <html>
  
 <head>
-    <title>Fun With Random Numbers</title>
+    <title>Log-in</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
  
 <body class="home">
-    <h2>Make Something Random</h2>
-
-    <a href="/rand/1/10">
-      <button class="buttonC">A Small Random Number</button>
-    </a>
     
-    <a href="/rand/1000/2000">
-      <button class="buttonC"> A Big Random Number</button>
-    </a>
-
-    <a href="/pookie">
-      <button class="buttonC">A pookie bear</button>
-    </a>
-
-    <a href="/randS">
-      <button class="buttonC">Generate a Random Story:</button>
-    </a>
-    </br>
-    <!-- <h1>{{randName}} the {{randAdjective}} was born in {{randPlace}} in {{randYear}}</h1> -->
- 
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/submit-login" method="post">
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p>Not registered? <a href="register.html">Create an account</a></p>
+  </div>
 
 </body>
  
