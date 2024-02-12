@@ -1,0 +1,65 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color:darkblue;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInBG {
+    from { background-color: rgb(246, 239, 235);}
+    to {background-color: blanchedalmond;}
+}
+
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+h1,h2{
+    text-align: center;
+    animation: fadeIn 1s ease-in-out forwards, slideDown 1s ease-out forwards;
+}
+
+.home{
+    animation: fadeInBG 0.5s ease-in-out forwards;
+}
+
+body{
+    background-color: blanchedalmond;
+}
+
+.buttonC{
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+button {
+    background-color: #04AA6D; /* Green */
+    margin: 10px;
+    color: white;
+    padding: 32px 45%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+    transition: background-color 0.2s ease-in-out; /* Add transition for all state changes */
+}
+
+button:hover {
+    background-color: #026541; /* Darker green */
+}
+
+
+a{
+    color:brown;
+    font-style:italic;
+}

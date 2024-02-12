@@ -30,7 +30,8 @@ def direct_form():
     return render_template('direct_form.html')
 
 @app.route('/internal/submit', methods = ['POST'])
-def direct_submit():
+#FUNCTION IS TOO LONG
+def direct_submit(): 
     cnx = mysql.connector.connect(user='webapp', password='novovoom1web', host='db', database='NovoVoom')
     cursor = cnx.cursor(buffered=True)
     form_data = request.form

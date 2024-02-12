@@ -8,7 +8,8 @@ app = Flask(__name__,
         static_folder='static',
         template_folder='templates')
 
-@app.route('/')
+#http://stearns.mathcs.carleton.edu:5000
+@app.route('/') 
 def test_func():
     return app.send_static_file('NovoVoom.html')
 
