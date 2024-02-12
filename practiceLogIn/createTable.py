@@ -7,7 +7,7 @@ def create_tables():
     command1 = """CREATE TABLE userInfo ( 
             user_id text NOT NULL,
             username text NOT NULL,
-            password text NOT NULL,
+            password text NOT NULL
             ) """
         
 
