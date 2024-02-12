@@ -8,6 +8,10 @@ app = Flask(__name__)
 def welcome():
     return render_template("index.html")
 
+@app.route('/register')
+def welcome():
+    return render_template("register.html")
+
 if __name__ == '__main__':
     my_port = 5128
     app.run(host='0.0.0.0', port = my_port) 
