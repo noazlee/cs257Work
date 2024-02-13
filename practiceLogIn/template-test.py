@@ -32,6 +32,7 @@ def isUserInDB(Username, Password):
 
         if(row is not None):
             return Username
+            print(row)
         else:
             return None
 
@@ -42,7 +43,7 @@ def isUserInDB(Username, Password):
         if conn is not None:
             conn.close()
 
-    
+
 
 @app.route('/')
 def welcome():
@@ -61,11 +62,10 @@ def submit_login():
         return render_template("welcome.html", userName=username)
     else:
         flash('Login Failed. Please check your username and password.')
-        return render_template("index.html", userName=username)
+        print(it didnt work idot)
+        return render_template("index.html")
         
-
-
-
 if __name__ == '__main__':
     my_port = 5128
     app.run(host='0.0.0.0', port = my_port) 
+
