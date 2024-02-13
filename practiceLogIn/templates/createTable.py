@@ -4,7 +4,7 @@ import psycopg2
 
 def create_tables():
     """ create tables in the PostgreSQL database"""
-    command1 = """CREATE TABLE userInfo ( 
+    command1 = """CREATE TABLE IF NOT EXISTS userInfo ( 
             user_id text NOT NULL,
             username text NOT NULL,
             password text NOT NULL

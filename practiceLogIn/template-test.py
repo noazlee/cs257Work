@@ -1,8 +1,46 @@
-from flask import Flask
+from flask import request, redirect, url_for, flash
 from flask import render_template
 import random
+import psycopg2
 
 app = Flask(__name__)
+
+def isUserInDB(Username, Password):
+    
+    conn = None
+    try:
+
+        conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="leen2",
+        user="leen2",
+        password="chip574pencil")
+        
+        cur = conn.cursor()
+
+        sql="""
+        SELECT username, password FROM userInfo 
+        WHERE username = %s  AND password = %s"""
+        
+        cur.execute(sql,[Username, Password]
+        )
+        #print("The number of parts: ", cur.rowcount)
+        row = cur.fetchone()
+
+        if(row is not None):
+            return Username
+        else:
+            return None
+
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+    
 
 @app.route('/')
 def welcome():
@@ -11,6 +49,19 @@ def welcome():
 @app.route('/register')
 def register():
     return render_template("register.html")
+
+@app.route('/submit-login')
+def submit_login():
+    username = request.form['username']
+    password = request.form['password']
+    user = isUserInDB(username, password)
+    if user:
+        return render_template("welcome.html")
+    else:
+        flash('Login Failed. Please check your username and password.')
+        
+
+
 
 if __name__ == '__main__':
     my_port = 5128
