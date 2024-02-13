@@ -57,7 +57,7 @@ def submit_login():
     password = request.form['password']
     user = isUserInDB(username, password)
     if user:
-        return render_template("welcome.html")
+        return render_template("welcome.html", userName=username)
     else:
         flash('Login Failed. Please check your username and password.')
         return render_template("index.html")
