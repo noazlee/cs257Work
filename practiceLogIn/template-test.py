@@ -22,7 +22,7 @@ def isUserInDB(Username, Password):
         cur = conn.cursor()
 
         sql="""
-        SELECT username, password FROM userInfo 
+        SELECT username, password FROM userinfo 
         WHERE username = %s  AND password = %s"""
         
         cur.execute(sql,[Username, Password]
