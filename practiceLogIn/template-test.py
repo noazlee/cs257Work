@@ -51,7 +51,7 @@ def welcome():
 def register():
     return render_template("register.html")
 
-@app.route('/submit-login')
+@app.route('/submit-login', methods=['POST'])
 def submit_login():
     username = request.form['username']
     password = request.form['password']
@@ -60,6 +60,7 @@ def submit_login():
         return render_template("welcome.html")
     else:
         flash('Login Failed. Please check your username and password.')
+        return render_template("index.html")
         
 
 
