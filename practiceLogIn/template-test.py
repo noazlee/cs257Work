@@ -27,7 +27,7 @@ def isUserInDB(Username, Password):
         
         cur.execute(sql,[Username, Password]
         )
-        #print("The number of parts: ", cur.rowcount)
+
         row = cur.fetchone()
 
         if(row is not None):
@@ -61,7 +61,6 @@ def submit_login():
         return render_template("welcome.html", userName=username)
     else:
         flash('Login Failed. Please check your username and password.')
-        return render_template("index.html")
         
 
 
