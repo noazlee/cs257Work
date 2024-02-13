@@ -5,6 +5,7 @@ import random
 import psycopg2
 
 app = Flask(__name__)
+app.secret_key = '19021999'
 
 def isUserInDB(Username, Password):
     
