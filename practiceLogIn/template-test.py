@@ -1,3 +1,4 @@
+from flask import Flask
 from flask import request, redirect, url_for, flash
 from flask import render_template
 import random
