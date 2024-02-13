@@ -62,7 +62,7 @@ def submit_login():
         return render_template("welcome.html", userName=username)
     else:
         flash('Login Failed. Please check your username and password.')
-        print(it didnt work idot)
+        print("it didnt work idot")
         return render_template("index.html")
         
 if __name__ == '__main__':
