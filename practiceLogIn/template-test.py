@@ -61,6 +61,7 @@ def submit_login():
         return render_template("welcome.html", userName=username)
     else:
         flash('Login Failed. Please check your username and password.')
+        return render_template("index.html", userName=username)
         
 
 
