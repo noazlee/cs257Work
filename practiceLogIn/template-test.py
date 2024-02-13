@@ -31,8 +31,8 @@ def isUserInDB(Username, Password):
         row = cur.fetchone()
 
         if(row is not None):
-            return Username
             print(row)
+            return Username  
         else:
             return None
 
