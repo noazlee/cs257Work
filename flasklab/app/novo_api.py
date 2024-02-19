@@ -32,6 +32,7 @@ def direct_form():
 @app.route('/internal/submit', methods = ['POST'])
 #FUNCTION IS TOO LONG
 def direct_submit(): 
+    #THIS COULD BE A FUNCTION
     cnx = mysql.connector.connect(user='webapp', password='novovoom1web', host='db', database='NovoVoom')
     cursor = cnx.cursor(buffered=True)
     form_data = request.form
@@ -46,6 +47,7 @@ def direct_submit():
 
     cnx.commit()
 
+    #THIS COULD BE IN A DIFFERENT METHOD
     output_str = ""
     for data in cursor:
         for item in data:
