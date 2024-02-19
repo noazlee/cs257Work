@@ -1,10 +1,11 @@
-from re import S
-import flask,psycopg2
+from flask import Flask
+from flask import render_template
+import random
 
 app = flask.Flask(__name__)
 
 @app.route('/')
-def my_function():
+def welcome():
     return render_template("homepage.html")
 
 if __name__ == '__main__':
