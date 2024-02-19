@@ -8,12 +8,8 @@
   Hello World!
 </h1>
 
-<p class="center-para">
-  {{someText}}
-</p>
-
-<p class="center-para">
-<button class="big-button" onclick="changeColor()">
+<p class="big-text">
+<button onclick="changeColor()">
    Change Color
 </button>
 </p>
