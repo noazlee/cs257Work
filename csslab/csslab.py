@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 import random
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def welcome():
