@@ -1,5 +1,5 @@
 var heading = document.getElementById("hello")
-heading.onmouseover = function(){
+heading.onclick = function(){
   heading.style.fontStyle = "italic";
 }
 
